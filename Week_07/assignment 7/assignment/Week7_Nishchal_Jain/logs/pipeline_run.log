@@ -1,0 +1,463 @@
+2026-07-13 01:37:47,963 | root | INFO | Logging initialized. Output target file: C:\Users\ASUS\Desktop\assignment 7\assignment\Week7_Nishchal_Jain\logs\pipeline_run.log
+2026-07-13 01:37:47,968 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:37:47,968 | rag_pipeline | INFO | PHASE 1: Loading raw documents
+2026-07-13 01:37:47,969 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:37:47,969 | document_loader | INFO | Attempting to read single file: C:\Users\ASUS\Desktop\Manthan_Maheshwari_resume.pdf
+2026-07-13 01:37:48,288 | document_loader | DEBUG | Successfully read 3661 characters from page 1
+2026-07-13 01:37:48,289 | document_loader | INFO | Extracted 3661 characters from PDF file: Manthan_Maheshwari_resume.pdf
+2026-07-13 01:37:48,289 | document_loader | INFO | Total documents loaded into pipeline: 1
+2026-07-13 01:37:48,289 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:37:48,290 | rag_pipeline | INFO | PHASE 2: Splitting documents into overlapping segments
+2026-07-13 01:37:48,290 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:37:48,290 | text_chunker | INFO | Segmented 'Manthan_Maheshwari_resume.pdf' into 8 blocks (max_size=500, overlap=80)
+2026-07-13 01:37:48,291 | text_chunker | INFO | Segmentation finalized: 8 chunks from 1 source files
+2026-07-13 01:37:48,291 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:37:48,292 | rag_pipeline | INFO | PHASE 3: Computing vector representation embeddings
+2026-07-13 01:37:48,292 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:38:04,035 | tensorflow | DEBUG | Falling back to TensorFlow client; we recommended you install the Cloud TPU client directly with pip install cloud-tpu-client.
+2026-07-13 01:38:04,647 | h5py._conv | DEBUG | Creating converter from 7 to 5
+2026-07-13 01:38:04,647 | h5py._conv | DEBUG | Creating converter from 5 to 7
+2026-07-13 01:38:04,648 | h5py._conv | DEBUG | Creating converter from 7 to 5
+2026-07-13 01:38:04,648 | h5py._conv | DEBUG | Creating converter from 5 to 7
+2026-07-13 01:38:06,911 | matplotlib | DEBUG | matplotlib data path: C:\Users\ASUS\AppData\Roaming\Python\Python313\site-packages\matplotlib\mpl-data
+2026-07-13 01:38:06,920 | matplotlib | DEBUG | CONFIGDIR=C:\Users\ASUS\.matplotlib
+2026-07-13 01:38:06,922 | matplotlib | DEBUG | interactive is False
+2026-07-13 01:38:06,922 | matplotlib | DEBUG | platform is win32
+2026-07-13 01:38:07,038 | matplotlib | DEBUG | CACHEDIR=C:\Users\ASUS\.matplotlib
+2026-07-13 01:38:07,042 | matplotlib.font_manager | DEBUG | Using fontManager instance from C:\Users\ASUS\.matplotlib\fontlist-v390.json
+2026-07-13 01:38:18,333 | tensorflow | WARNING | From C:\Users\ASUS\AppData\Roaming\Python\Python313\site-packages\tf_keras\src\losses.py:2976: The name tf.losses.sparse_softmax_cross_entropy is deprecated. Please use tf.compat.v1.losses.sparse_softmax_cross_entropy instead.
+
+2026-07-13 01:38:19,217 | datasets | INFO | PyTorch version 2.13.0 available.
+2026-07-13 01:38:19,223 | datasets | INFO | TensorFlow version 2.21.0 available.
+2026-07-13 01:38:19,951 | embedding_engine | INFO | Initializing embedding model: all-MiniLM-L6-v2
+2026-07-13 01:38:19,957 | sentence_transformers.SentenceTransformer | INFO | Use pytorch device_name: cpu
+2026-07-13 01:38:19,958 | sentence_transformers.SentenceTransformer | INFO | Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-07-13 01:38:19,962 | urllib3.connectionpool | DEBUG | Starting new HTTPS connection (1): huggingface.co:443
+2026-07-13 01:38:20,323 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2026-07-13 01:38:20,339 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json HTTP/1.1" 200 0
+2026-07-13 01:38:20,574 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2026-07-13 01:38:20,590 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json HTTP/1.1" 200 0
+2026-07-13 01:38:20,824 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+2026-07-13 01:38:20,841 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md HTTP/1.1" 200 0
+2026-07-13 01:38:21,166 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2026-07-13 01:38:21,186 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json HTTP/1.1" 200 0
+2026-07-13 01:38:21,436 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+2026-07-13 01:38:21,457 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json HTTP/1.1" 200 0
+2026-07-13 01:38:21,693 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2026-07-13 01:38:22,004 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+2026-07-13 01:38:22,024 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json HTTP/1.1" 200 0
+2026-07-13 01:38:22,401 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2026-07-13 01:38:22,421 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json HTTP/1.1" 200 0
+2026-07-13 01:38:22,675 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2026-07-13 01:38:22,909 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=True&expand=False HTTP/1.1" 200 None
+2026-07-13 01:38:23,303 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/revision/main HTTP/1.1" 200 None
+2026-07-13 01:38:23,546 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 None
+2026-07-13 01:38:23,608 | embedding_engine | INFO | Model loaded and verified. Vector dimensionality: 384
+2026-07-13 01:38:23,608 | embedding_engine | INFO | Encoding 8 text blocks using batch size: 64
+2026-07-13 01:38:24,275 | embedding_engine | INFO | Created embedding matrix of shape: (8, 384)
+2026-07-13 01:38:24,276 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:38:24,276 | rag_pipeline | INFO | PHASE 4: Organizing vector indexing database
+2026-07-13 01:38:24,276 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:38:24,277 | vector_store | INFO | Generating FAISS flat index: storing 8 items with 384 dimensions
+2026-07-13 01:38:24,277 | vector_store | INFO | FAISS index construction complete. Stored vectors count: 8
+2026-07-13 01:38:24,279 | vector_store | INFO | FAISS index successfully saved to disk: C:\Users\ASUS\Desktop\assignment 7\assignment\Week7_Nishchal_Jain\faiss_store\doc_index.faiss
+2026-07-13 01:38:24,279 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:38:24,280 | rag_pipeline | INFO | PHASE 5: Compiling lexical BM25 database
+2026-07-13 01:38:24,280 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:38:24,282 | hybrid_retriever | INFO | Lexical index compiled. Document count: 8, Unique vocabulary: 343
+2026-07-13 01:38:24,282 | rag_pipeline | INFO | Ingestion pipeline execution finished in 36.31 seconds
+2026-07-13 01:38:24,354 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.3012)
+2026-07-13 01:38:24,356 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 6 lexical candidates to return 5 top matches
+2026-07-13 01:38:24,357 | answer_generator | INFO | Sending request to Gemini model (3514 chars, 5 segments)
+2026-07-13 01:38:26,502 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:38:26,504 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:38:26,535 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7694CD7F0>
+2026-07-13 01:38:26,535 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D7671384B0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:38:26,567 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7693E6850>
+2026-07-13 01:38:26,567 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:38:26,567 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:38:26,567 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:38:26,568 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:38:26,568 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:38:45,301 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:08:45 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=18706'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:38:45,302 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-07-13 01:38:45,303 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:38:45,304 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:38:45,304 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:38:45,304 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:38:45,305 | google_genai.models | INFO | AFC remote call 1 is done.
+2026-07-13 01:38:45,306 | answer_generator | INFO | Gemini API execution succeeded. Length: 201 characters
+2026-07-13 01:38:45,306 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:38:45,307 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:38:45,363 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.2305)
+2026-07-13 01:38:45,364 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 4 lexical candidates to return 5 top matches
+2026-07-13 01:38:45,364 | answer_generator | INFO | Sending request to Gemini model (3511 chars, 5 segments)
+2026-07-13 01:38:45,988 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:38:45,990 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:38:46,037 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7694DD1D0>
+2026-07-13 01:38:46,037 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D7671389B0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:38:46,068 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769466B10>
+2026-07-13 01:38:46,069 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:38:46,069 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:38:46,069 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:38:46,070 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:38:46,070 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:39:01,611 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:09:02 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=15511'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:39:01,612 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-07-13 01:39:01,613 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:39:01,614 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:39:01,614 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:39:01,614 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:39:01,615 | google_genai.models | INFO | AFC remote call 1 is done.
+2026-07-13 01:39:01,616 | answer_generator | INFO | Gemini API execution succeeded. Length: 199 characters
+2026-07-13 01:39:01,617 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:39:01,618 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:39:01,684 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.0349)
+2026-07-13 01:39:01,685 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 1 lexical candidates to return 5 top matches
+2026-07-13 01:39:01,685 | answer_generator | INFO | Sending request to Gemini model (3450 chars, 5 segments)
+2026-07-13 01:39:02,361 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:39:02,363 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:39:02,409 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7694668B0>
+2026-07-13 01:39:02,410 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D7694BB570> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:39:02,440 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76946B1D0>
+2026-07-13 01:39:02,440 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:39:02,441 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:39:02,441 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:39:02,441 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:39:02,441 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:39:34,821 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:09:35 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=32352'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:39:34,822 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-07-13 01:39:34,823 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:39:34,824 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:39:34,824 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:39:34,824 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:39:34,824 | google_genai.models | INFO | AFC remote call 1 is done.
+2026-07-13 01:39:34,825 | answer_generator | INFO | Gemini API execution succeeded. Length: 168 characters
+2026-07-13 01:39:34,825 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:39:34,826 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:39:34,885 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.3250)
+2026-07-13 01:39:34,886 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 6 lexical candidates to return 5 top matches
+2026-07-13 01:39:34,886 | answer_generator | INFO | Sending request to Gemini model (3486 chars, 5 segments)
+2026-07-13 01:39:35,496 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:39:35,497 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:39:35,525 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76945E580>
+2026-07-13 01:39:35,525 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D7694BB6B0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:39:35,558 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76945E690>
+2026-07-13 01:39:35,559 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:39:35,559 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:39:35,559 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:39:35,559 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:39:35,559 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:39:51,186 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:09:51 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=15509'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:39:51,187 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-07-13 01:39:51,189 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:39:51,190 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:39:51,190 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:39:51,190 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:39:51,191 | google_genai.models | INFO | AFC remote call 1 is done.
+2026-07-13 01:39:51,192 | answer_generator | INFO | Gemini API execution succeeded. Length: 292 characters
+2026-07-13 01:39:51,194 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:39:51,195 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:39:51,285 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.2846)
+2026-07-13 01:39:51,286 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 6 lexical candidates to return 5 top matches
+2026-07-13 01:39:51,286 | answer_generator | INFO | Sending request to Gemini model (3503 chars, 5 segments)
+2026-07-13 01:39:51,902 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:39:51,904 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:39:51,942 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7694E4A50>
+2026-07-13 01:39:51,942 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D7694BB930> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:39:51,973 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7694E4B50>
+2026-07-13 01:39:51,973 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:39:51,974 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:39:51,974 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:39:51,974 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:39:51,974 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:40:23,128 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 503, b'Service Unavailable', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:10:23 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=31125'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:40:23,129 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 503 Service Unavailable"
+2026-07-13 01:40:23,129 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:40:23,130 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:40:23,130 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:40:23,130 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:40:23,130 | answer_generator | ERROR | Gemini API endpoint failed: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}
+2026-07-13 01:40:23,130 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:40:23,131 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:40:23,133 | document_loader | INFO | Resolving/downloading dataset repository: vectara/open_ragbench
+2026-07-13 01:40:23,133 | document_loader | INFO | This download may take a moment on the initial run.
+2026-07-13 01:40:23,368 | urllib3.connectionpool | DEBUG | https://huggingface.co:443 "GET /api/datasets/vectara/open_ragbench/revision/main HTTP/1.1" 200 None
+2026-07-13 01:40:23,740 | document_loader | INFO | Dataset snapshot found at: C:\Users\ASUS\.cache\huggingface\hub\datasets--vectara--open_ragbench\snapshots\63f6b052ff83508b08e242db42263ee708815c26
+2026-07-13 01:40:23,757 | document_loader | INFO | Loaded 30 query-response pairs for evaluation
+2026-07-13 01:40:23,759 | rag_pipeline | INFO | Loaded 10 validation queries from dataset snapshot
+2026-07-13 01:40:23,760 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:40:23,760 | rag_pipeline | INFO | VALIDATION STAGE: Processing 10 validation queries
+2026-07-13 01:40:23,760 | rag_pipeline | INFO | ============================================================
+2026-07-13 01:40:23,760 | rag_pipeline | INFO | 
+--- Processing Query 1/10 ---
+2026-07-13 01:40:23,760 | rag_pipeline | INFO | Query text: What are the challenges in estimating output impedance in inverter-based grids?
+2026-07-13 01:40:23,801 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.0789)
+2026-07-13 01:40:23,802 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 3 lexical candidates to return 5 top matches
+2026-07-13 01:40:23,802 | answer_generator | INFO | Sending request to Gemini model (3456 chars, 5 segments)
+2026-07-13 01:40:24,459 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:40:24,460 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:40:24,508 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769442E40>
+2026-07-13 01:40:24,508 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954FCF0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:40:24,540 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769442F30>
+2026-07-13 01:40:24,540 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:40:24,541 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:40:24,541 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:40:24,541 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:40:24,542 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:40:42,491 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:10:42 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=17799'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:40:42,491 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-07-13 01:40:42,515 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:40:42,516 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:40:42,517 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:40:42,517 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:40:42,518 | google_genai.models | INFO | AFC remote call 1 is done.
+2026-07-13 01:40:42,518 | answer_generator | INFO | Gemini API execution succeeded. Length: 255 characters
+2026-07-13 01:40:42,518 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:40:42,519 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:40:42,519 | rag_pipeline | INFO | Retrieval scoring: top_score=1.0000, average_score=0.4450
+2026-07-13 01:40:42,519 | rag_pipeline | INFO | Answer: Based on the provided contexts, there is no information regarding the challenges in estimating output impedance in inverter-based grids. The contexts consist solely of a resume detailing software deve...
+2026-07-13 01:40:42,520 | rag_pipeline | INFO | 
+--- Processing Query 2/10 ---
+2026-07-13 01:40:42,520 | rag_pipeline | INFO | Query text: How do changes in effective microbial death rate influence parameters like alpha and beta?
+2026-07-13 01:40:42,628 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.0642)
+2026-07-13 01:40:42,629 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 6 lexical candidates to return 5 top matches
+2026-07-13 01:40:42,629 | answer_generator | INFO | Sending request to Gemini model (3440 chars, 5 segments)
+2026-07-13 01:40:43,338 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:40:43,340 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:40:43,385 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769483690>
+2026-07-13 01:40:43,385 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954FB10> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:40:43,416 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7694835B0>
+2026-07-13 01:40:43,416 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:40:43,417 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:40:43,417 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:40:43,417 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:40:43,417 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:40:43,610 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:10:44 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=166'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:40:43,610 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 01:40:43,611 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:40:43,612 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:40:43,612 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:40:43,612 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:40:43,612 | answer_generator | ERROR | Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 15.931517477s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '15s'}]}}
+2026-07-13 01:40:43,612 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:40:43,613 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:40:43,613 | rag_pipeline | INFO | Retrieval scoring: top_score=0.7000, average_score=0.4818
+2026-07-13 01:40:43,614 | rag_pipeline | INFO | Answer: [ERROR] Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on thi...
+2026-07-13 01:40:43,614 | rag_pipeline | INFO | 
+--- Processing Query 3/10 ---
+2026-07-13 01:40:43,614 | rag_pipeline | INFO | Query text: In what areas do syllabic embeddings show potential for improvement based on current research findings?
+2026-07-13 01:40:43,673 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.2401)
+2026-07-13 01:40:43,674 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 5 lexical candidates to return 5 top matches
+2026-07-13 01:40:43,675 | answer_generator | INFO | Sending request to Gemini model (3583 chars, 5 segments)
+2026-07-13 01:40:44,328 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:40:44,329 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:40:44,357 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7694C6EA0>
+2026-07-13 01:40:44,357 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954F9D0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:40:44,389 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769457A10>
+2026-07-13 01:40:44,390 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:40:44,390 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:40:44,390 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:40:44,391 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:40:44,391 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:40:44,572 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:10:45 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=154'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:40:44,572 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 01:40:44,573 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:40:44,574 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:40:44,574 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:40:44,574 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:40:44,574 | answer_generator | ERROR | Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 14.970139952s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '14s'}]}}
+2026-07-13 01:40:44,575 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:40:44,576 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:40:44,576 | rag_pipeline | INFO | Retrieval scoring: top_score=1.0000, average_score=0.6551
+2026-07-13 01:40:44,576 | rag_pipeline | INFO | Answer: [ERROR] Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on thi...
+2026-07-13 01:40:44,576 | rag_pipeline | INFO | 
+--- Processing Query 4/10 ---
+2026-07-13 01:40:44,577 | rag_pipeline | INFO | Query text: How does the MLMM approach affect the analysis of Root Mean Squared Error (RMSE)?
+2026-07-13 01:40:44,620 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.1339)
+2026-07-13 01:40:44,621 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 4 lexical candidates to return 5 top matches
+2026-07-13 01:40:44,621 | answer_generator | INFO | Sending request to Gemini model (3452 chars, 5 segments)
+2026-07-13 01:40:45,266 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:40:45,267 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:40:45,314 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769457890>
+2026-07-13 01:40:45,314 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954F7F0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:40:45,351 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76952BB70>
+2026-07-13 01:40:45,351 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:40:45,351 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:40:45,352 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:40:45,352 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:40:45,352 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:01,947 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'X-Gemini-Service-Tier', b'standard'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:11:02 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=16475'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:41:01,948 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 200 OK"
+2026-07-13 01:41:01,949 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:41:01,950 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:41:01,950 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:41:01,950 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:41:01,951 | google_genai.models | INFO | AFC remote call 1 is done.
+2026-07-13 01:41:01,952 | answer_generator | INFO | Gemini API execution succeeded. Length: 227 characters
+2026-07-13 01:41:01,952 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:41:01,953 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:41:01,953 | rag_pipeline | INFO | Retrieval scoring: top_score=0.8170, average_score=0.6646
+2026-07-13 01:41:01,954 | rag_pipeline | INFO | Answer: Based on the provided contexts, there is no mention of the "MLMM approach" or how it affects the analysis of "Root Mean Squared Error (RMSE)." Therefore, the provided contexts do not contain enough fa...
+2026-07-13 01:41:01,954 | rag_pipeline | INFO | 
+--- Processing Query 5/10 ---
+2026-07-13 01:41:01,956 | rag_pipeline | INFO | Query text: How does uncertainty in data affect standard quadratic optimization problems?
+2026-07-13 01:41:02,017 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.0672)
+2026-07-13 01:41:02,018 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 4 lexical candidates to return 5 top matches
+2026-07-13 01:41:02,018 | answer_generator | INFO | Sending request to Gemini model (3435 chars, 5 segments)
+2026-07-13 01:41:02,687 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:41:02,689 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:41:02,721 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76952BA10>
+2026-07-13 01:41:02,721 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954F6B0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:41:02,753 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76954FD90>
+2026-07-13 01:41:02,754 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:02,755 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:41:02,755 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:41:02,757 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:41:02,757 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:02,938 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:11:03 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=157'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:41:02,939 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 01:41:02,940 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:41:02,940 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:41:02,940 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:41:02,940 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:41:02,941 | answer_generator | ERROR | Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 56.603150549s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '56s'}]}}
+2026-07-13 01:41:02,941 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:41:02,942 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:41:02,942 | rag_pipeline | INFO | Retrieval scoring: top_score=1.0000, average_score=0.4433
+2026-07-13 01:41:02,943 | rag_pipeline | INFO | Answer: [ERROR] Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on thi...
+2026-07-13 01:41:02,943 | rag_pipeline | INFO | 
+--- Processing Query 6/10 ---
+2026-07-13 01:41:02,943 | rag_pipeline | INFO | Query text: What is the concept of location-class independence in object detection?
+2026-07-13 01:41:02,988 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.0822)
+2026-07-13 01:41:02,988 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 4 lexical candidates to return 5 top matches
+2026-07-13 01:41:02,989 | answer_generator | INFO | Sending request to Gemini model (3442 chars, 5 segments)
+2026-07-13 01:41:03,741 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:41:03,742 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:41:03,767 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76954F390>
+2026-07-13 01:41:03,768 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954F610> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:41:03,798 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76941F920>
+2026-07-13 01:41:03,798 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:03,798 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:41:03,799 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:41:03,799 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:41:03,799 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:03,962 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:11:04 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=137'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:41:03,963 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 01:41:03,963 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:41:03,964 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:41:03,964 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:41:03,964 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:41:03,965 | answer_generator | ERROR | Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 55.577448487s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '55s'}]}}
+2026-07-13 01:41:03,965 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:41:03,966 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:41:03,966 | rag_pipeline | INFO | Retrieval scoring: top_score=0.7000, average_score=0.5590
+2026-07-13 01:41:03,966 | rag_pipeline | INFO | Answer: [ERROR] Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on thi...
+2026-07-13 01:41:03,967 | rag_pipeline | INFO | 
+--- Processing Query 7/10 ---
+2026-07-13 01:41:03,967 | rag_pipeline | INFO | Query text: What happens to coma lobes as beams move further from the feed array center?
+2026-07-13 01:41:04,010 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.0965)
+2026-07-13 01:41:04,011 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 5 lexical candidates to return 5 top matches
+2026-07-13 01:41:04,011 | answer_generator | INFO | Sending request to Gemini model (3416 chars, 5 segments)
+2026-07-13 01:41:04,630 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:41:04,632 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:41:04,680 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769501B50>
+2026-07-13 01:41:04,681 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954F4D0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:41:04,711 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769501650>
+2026-07-13 01:41:04,712 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:04,712 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:41:04,712 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:41:04,713 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:41:04,713 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:04,886 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:11:05 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=147'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:41:04,887 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 01:41:04,888 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:41:04,889 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:41:04,890 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:41:04,890 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:41:04,890 | answer_generator | ERROR | Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 54.655416399s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '54s'}]}}
+2026-07-13 01:41:04,890 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:41:04,891 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:41:04,892 | rag_pipeline | INFO | Retrieval scoring: top_score=0.7000, average_score=0.4640
+2026-07-13 01:41:04,892 | rag_pipeline | INFO | Answer: [ERROR] Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on thi...
+2026-07-13 01:41:04,893 | rag_pipeline | INFO | 
+--- Processing Query 8/10 ---
+2026-07-13 01:41:04,893 | rag_pipeline | INFO | Query text: How does incorporating demographic factors influence job transition predictions using LLMs?
+2026-07-13 01:41:04,936 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.3168)
+2026-07-13 01:41:04,937 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 4 lexical candidates to return 5 top matches
+2026-07-13 01:41:04,938 | answer_generator | INFO | Sending request to Gemini model (3535 chars, 5 segments)
+2026-07-13 01:41:05,663 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:41:05,664 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:41:05,690 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7695FF0E0>
+2026-07-13 01:41:05,691 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954F390> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:41:05,721 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7695FF070>
+2026-07-13 01:41:05,722 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:05,722 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:41:05,722 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:41:05,723 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:41:05,723 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:05,909 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:11:06 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=160'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:41:05,910 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 01:41:05,910 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:41:05,911 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:41:05,911 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:41:05,911 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:41:05,911 | answer_generator | ERROR | Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 53.633140809s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '53s'}]}}
+2026-07-13 01:41:05,912 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:41:05,912 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:41:05,913 | rag_pipeline | INFO | Retrieval scoring: top_score=1.0000, average_score=0.4867
+2026-07-13 01:41:05,913 | rag_pipeline | INFO | Answer: [ERROR] Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on thi...
+2026-07-13 01:41:05,914 | rag_pipeline | INFO | 
+--- Processing Query 9/10 ---
+2026-07-13 01:41:05,914 | rag_pipeline | INFO | Query text: What challenges arise when using Langevin samplers with complex paths?
+2026-07-13 01:41:05,952 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.1432)
+2026-07-13 01:41:05,952 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 4 lexical candidates to return 5 top matches
+2026-07-13 01:41:05,953 | answer_generator | INFO | Sending request to Gemini model (3488 chars, 5 segments)
+2026-07-13 01:41:06,576 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:41:06,577 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:41:06,628 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7695546B0>
+2026-07-13 01:41:06,629 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954EFD0> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:41:06,659 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D7695547D0>
+2026-07-13 01:41:06,659 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:06,660 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:41:06,660 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:41:06,660 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:41:06,660 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:06,838 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:11:07 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=152'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:41:06,839 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 01:41:06,840 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:41:06,841 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:41:06,841 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:41:06,842 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:41:06,842 | answer_generator | ERROR | Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 52.703304352s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-3.5-flash', 'location': 'global'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '52s'}]}}
+2026-07-13 01:41:06,843 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:41:06,844 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:41:06,845 | rag_pipeline | INFO | Retrieval scoring: top_score=0.7638, average_score=0.7369
+2026-07-13 01:41:06,845 | rag_pipeline | INFO | Answer: [ERROR] Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on thi...
+2026-07-13 01:41:06,847 | rag_pipeline | INFO | 
+--- Processing Query 10/10 ---
+2026-07-13 01:41:06,848 | rag_pipeline | INFO | Query text: How do traditional feature selection methods for classification work?
+2026-07-13 01:41:06,889 | vector_store | DEBUG | Retrieved 8 chunks (highest similarity: 0.2050)
+2026-07-13 01:41:06,889 | hybrid_retriever | DEBUG | Hybrid retrieval finished: blended 8 semantic and 4 lexical candidates to return 5 top matches
+2026-07-13 01:41:06,890 | answer_generator | INFO | Sending request to Gemini model (3549 chars, 5 segments)
+2026-07-13 01:41:07,508 | google_genai.models | INFO | AFC is enabled with max remote calls: 10.
+2026-07-13 01:41:07,509 | httpcore.connection | DEBUG | connect_tcp.started host='generativelanguage.googleapis.com' port=443 local_address=None timeout=None socket_options=None
+2026-07-13 01:41:07,548 | httpcore.connection | DEBUG | connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D769648320>
+2026-07-13 01:41:07,548 | httpcore.connection | DEBUG | start_tls.started ssl_context=<ssl.SSLContext object at 0x000001D76954EE90> server_hostname='generativelanguage.googleapis.com' timeout=None
+2026-07-13 01:41:07,578 | httpcore.connection | DEBUG | start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001D76964A3A0>
+2026-07-13 01:41:07,578 | httpcore.http11 | DEBUG | send_request_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:07,578 | httpcore.http11 | DEBUG | send_request_headers.complete
+2026-07-13 01:41:07,579 | httpcore.http11 | DEBUG | send_request_body.started request=<Request [b'POST']>
+2026-07-13 01:41:07,579 | httpcore.http11 | DEBUG | send_request_body.complete
+2026-07-13 01:41:07,579 | httpcore.http11 | DEBUG | receive_response_headers.started request=<Request [b'POST']>
+2026-07-13 01:41:07,752 | httpcore.http11 | DEBUG | receive_response_headers.complete return_value=(b'HTTP/1.1', 429, b'Too Many Requests', [(b'X-Gemini-Service-Tier', b'standard'), (b'Vary', b'Origin'), (b'Vary', b'X-Origin'), (b'Vary', b'Referer'), (b'Content-Type', b'application/json; charset=UTF-8'), (b'Content-Encoding', b'gzip'), (b'Date', b'Sun, 12 Jul 2026 20:11:08 GMT'), (b'Server', b'scaffolding on HTTPServer2'), (b'X-XSS-Protection', b'0'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-Content-Type-Options', b'nosniff'), (b'Server-Timing', b'gfet4t7; dur=146'), (b'Alt-Svc', b'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'), (b'Transfer-Encoding', b'chunked')])
+2026-07-13 01:41:07,752 | httpx | INFO | HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent "HTTP/1.1 429 Too Many Requests"
+2026-07-13 01:41:07,753 | httpcore.http11 | DEBUG | receive_response_body.started request=<Request [b'POST']>
+2026-07-13 01:41:07,754 | httpcore.http11 | DEBUG | receive_response_body.complete
+2026-07-13 01:41:07,754 | httpcore.http11 | DEBUG | response_closed.started
+2026-07-13 01:41:07,754 | httpcore.http11 | DEBUG | response_closed.complete
+2026-07-13 01:41:07,754 | answer_generator | ERROR | Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.5-flash\nPlease retry in 51.788523664s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.5-flash'}, 'quotaValue': '20'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '51s'}]}}
+2026-07-13 01:41:07,755 | httpcore.connection | DEBUG | close.started
+2026-07-13 01:41:07,756 | httpcore.connection | DEBUG | close.complete
+2026-07-13 01:41:07,756 | rag_pipeline | INFO | Retrieval scoring: top_score=0.7881, average_score=0.5472
+2026-07-13 01:41:07,756 | rag_pipeline | INFO | Answer: [ERROR] Gemini API endpoint failed: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on thi...
